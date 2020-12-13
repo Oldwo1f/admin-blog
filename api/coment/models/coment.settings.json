@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coments",
+  "info": {
+    "name": "coment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "article": {
+      "model": "article",
+      "via": "coments"
+    },
+    "coments": {
+      "collection": "coment",
+      "via": "coment"
+    },
+    "coment": {
+      "model": "coment",
+      "via": "coments"
+    }
+  }
+}
